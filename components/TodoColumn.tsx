@@ -15,7 +15,7 @@ const TodoColumn = (props: Props) => {
     return (
         <div
             className={
-                "col- flex w-full flex-col rounded-md border border-amber-700 px-8 pb-8" + status
+                "flex w-full flex-col rounded-md border border-amber-700 px-8 pb-8 col-" + status
             }
         >
             <h2 className="py-8 text-center text-2xl font-bold">{title}</h2>
