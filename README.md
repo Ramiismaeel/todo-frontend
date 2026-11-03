@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
+# Todo App – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<p>
+  <img src="https://skillicons.dev/icons?i=react,ts,tailwind,vite" alt="React, TypeScript, Tailwind CSS, Vite" />
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios" height="48" />
+</p>
 
-Currently, two official plugins are available:
+A simple Kanban-style todo board built with React, TypeScript and Tailwind CSS. It talks to a Spring Boot REST API via Axios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Todo app screenshot](docs/screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Three columns: **Open**, **In Progress**, **Done**
+- Create, edit and delete todos (with confirmation)
+- Move todos forward and back between columns
+- Loading and error states for fetching and saving
 
-## Expanding the Oxlint configuration
+## Tech stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+| | |
+|---|---|
+| UI | React + TypeScript |
+| Styling | Tailwind CSS |
+| HTTP | Axios |
+| Build | Vite |
+| Backend | Spring Boot REST API (`/api/todo`) |
 
-```json
-{
-    "$schema": "./node_modules/oxlint/configuration_schema.json",
-    "plugins": ["react", "typescript", "oxc"],
-    "options": {
-        "typeAware": true
-    },
-    "rules": {
-        "react/rules-of-hooks": "error",
-        "react/only-export-components": ["warn", { "allowConstantExport": true }]
-    }
-}
+## Getting started
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The backend must be running. Requests to `/api` are proxied to it by the Vite dev server.
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Build for production |
+| `npm run format` | Format code with Prettier |
